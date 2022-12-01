@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+    <!-- FORMULARIO PARA LA CREACION DE TEXTOS -->
+    <div class="container mb-5 mt-10" >
+        <button type="submit" class="btn btn-primary" onclick="location.href='/showform'" >Registrar nuevo empleado</button>
+        <button type="submit" class="btn btn-primary" onclick="location.href='/formedit'" >Editar empleado</button>
+        <button type="submit" class="btn btn-danger" onclick="location.href='/deleteall'" >Eliminar Lista</button>
+        <button type="submit" class="btn btn-primary" onclick="location.href='/search'" >Buscar por numero de empleado</button>
+    </div>
+
+
+
+    <!-- CONTENEDOR DE TEXTOS CREADOS -->
+
+    <div class="container mb-3 border border-light" th:each="salario : ${salarioList}" >
+        <p>Numero de empleado: <span th:text="${salario.id}"></span></p>
+        <p> Nombre y Apellido: <span th:text="${salario.nombreSalario}"></span></p>
+        <p>Salario: <span th:text="${salario.remuneracion}"></span></p>
+        <a th:href="@{/delete/{id}(id=${salario.id})}" class="btn btn-danger">Eliminar</a>
+        <a th:href="@{/edit/{id}(id=${salario.id})}" class="btn btn-warning">Editar</a>
+    </div>
+
+</body>
+</html>

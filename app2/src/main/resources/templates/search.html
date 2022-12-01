@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>formEdit</title>
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container mb-5">
+  <form action = # th:action="@{http://localhost:8080/getid}" >
+    <label class="form-label">Buscar empleado</label>
+
+    <p>Numero de empleado:<input  type="text" name="id"></p>
+
+    <p><input type="submit" value="Buscar" class="btn btn-primary"   ></p>
+
+  </form>
+</div>
+</body>
+</html>
